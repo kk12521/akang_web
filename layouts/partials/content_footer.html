@@ -1,0 +1,45 @@
+<footer class="main-footer footer-type-1 text-xs">
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+
+        <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
+            rel="search" one-link-mark="yes">
+            <i class="iconfont icon-search"></i>
+        </a>
+        
+        <a href="javascript:;"
+            id="sponsor-trigger"
+            class="btn rounded-circle kefu sponsor-popover-trigger m-1"
+            title="赞助康康"
+            aria-label="赞助康康"
+        >
+            <i class="sponsor-ico fas fa-hand-holding-heart"></i>
+        </a>
+
+        {{ if $.Site.Params.nightMode }} 
+        <a href="javascript:" onclick="switchNightMode(); return false;" class="btn rounded-circle switch-dark-mode m-1" id="yejian"
+            data-toggle="tooltip" data-placement="left" title="日间模式">
+            <i class="theme-mode-ico iconfont icon-light"></i>
+        </a>
+        {{ else }}
+        <a href="javascript:" onclick="switchNightMode(); return false;" class="btn rounded-circle switch-dark-mode m-1" id="yejian"
+            data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="theme-mode-ico iconfont icon-night"></i>
+        </a>
+        {{ end }}
+    </div>
+
+    <div id="sponsor-popover-content" class="d-none">
+        <div class="sponsor-popover-inner">
+            <img src="{{ absURL "assets/images/wx.jpg" }}" alt="微信赞助码">
+            <img src="{{ absURL "assets/images/zfb.jpg" }}" alt="支付宝赞助码">
+        </div>
+    </div>
+
+    <div class="footer-inner">
+        <div class="footer-text">{{ replace $.Site.Params.footer.copyright "{year}" now.Year | markdownify }}</div>
+    </div>
+</footer>
+</div></div>

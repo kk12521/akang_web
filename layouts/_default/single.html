@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+<body class="page-body boxed-container single-page">
+<div class="page-container">
+{{ partial "content_header.html" . }}
+    <main role="main" class="flex-shrink-0">
+    <div class="container">
+        <article class="single-shell">
+            <div class="single-hero">
+                <p class="single-kicker">Project Notes</p>
+                <h1>{{ .Title }}</h1>
+                {{ with .Date }}
+                <p class="single-meta">{{ .Format "2006-01-02" }}</p>
+                {{ end }}
+            </div>
+            <div class="content single-content">
+                {{ .Content | markdownify | safeHTML }}
+            </div>
+        </article>
+    </div>
+    </main>
+
+{{ partial "content_footer.html" . }}
+
+{{ partial "modal_search.html" . }}
+
+{{ partial "footer.html" . }}

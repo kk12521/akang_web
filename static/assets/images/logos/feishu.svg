@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="feishuTitle">
+  <title id="feishuTitle">Feishu</title>
+  <defs>
+    <linearGradient id="feishuBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C6FF"/>
+      <stop offset="100%" stop-color="#0A72FF"/>
+    </linearGradient>
+    <linearGradient id="feishuGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7CEB72"/>
+      <stop offset="100%" stop-color="#20C15A"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 34c0-8.8 7.2-16 16-16h51c7.2 0 13 5.8 13 13 0 4.3-2.1 8.3-5.7 10.8L71 60H40c-8.8 0-16-7.2-16-16V34z" fill="url(#feishuBlue)"/>
+  <path d="M104 84c0 8.8-7.2 16-16 16H37c-7.2 0-13-5.8-13-13 0-4.3 2.1-8.3 5.7-10.8L57 58h31c8.8 0 16 7.2 16 16v10z" fill="url(#feishuGreen)"/>
+</svg>

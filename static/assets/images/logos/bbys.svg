@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="bbysTitle">
+  <title id="bbysTitle">布布影视</title>
+  <rect width="64" height="64" rx="14" fill="#b92b27"/>
+  <circle cx="30" cy="30" r="14" fill="none" stroke="#ffffff" stroke-width="7"/>
+  <path d="M39.5 39.5 L51 51" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+</svg>

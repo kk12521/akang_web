@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="linuxdoTitle">
+  <title id="linuxdoTitle">Linux.do</title>
+  <rect width="128" height="128" rx="28" fill="#111827"/>
+  <path d="M33 34h17l18 18-18 18H33z" fill="#ffffff"/>
+  <path d="M63 34h20l12 12-12 12H63l12-12z" fill="#60A5FA"/>
+  <path d="M63 70h20l12 12-12 12H63l12-12z" fill="#34D399"/>
+</svg>

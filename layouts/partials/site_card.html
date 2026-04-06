@@ -1,0 +1,127 @@
+{{- $page := .page -}}
+{{- $site := .site -}}
+{{- $context := .context -}}
+{{- $link := or $site.url $site.usrl "" -}}
+{{- $logo := $site.logo -}}
+{{- $hasQrcode := $site.qrcode -}}
+{{- $host := "" -}}
+{{- $summary := $site.description -}}
+{{- $titleKey := lower (replaceRE "\\s+" "" $site.title) -}}
+{{- $qrcodePath := $site.qrcode -}}
+{{- if $link -}}
+    {{- $host = replaceRE "^https?://([^/]+)/?.*$" "$1" $link -}}
+{{- end -}}
+{{- if and $hasQrcode (not (findRE "^https?://(.|\n)*?$" $site.qrcode)) -}}
+    {{- if hasPrefix $site.qrcode "assets/" -}}
+        {{- $qrcodePath = absURL $site.qrcode -}}
+    {{- else -}}
+        {{- $qrcodePath = printf "%s/%s" $page.Site.Params.logosPath $site.qrcode -}}
+    {{- end -}}
+{{- end -}}
+{{- if eq $titleKey "ncbi" -}}
+    {{- $summary = "用于检索生物医学数据库、基因信息与论文资料。" -}}
+{{- else if eq $titleKey "bioconda" -}}
+    {{- $summary = "面向生命科学的 Conda 软件仓库，适合安装生信工具。" -}}
+{{- else if eq $titleKey "cpan" -}}
+    {{- $summary = "Perl 模块检索平台，适合查找和安装常用扩展包。" -}}
+{{- else if eq $titleKey "galaxyproject" -}}
+    {{- $summary = "可视化生信分析平台，适合在线运行标准分析流程。" -}}
+{{- else if eq $titleKey "rproject" -}}
+    {{- $summary = "R 语言官方入口，适合统计分析与数据建模学习。" -}}
+{{- else if eq $titleKey "bioconductor" -}}
+    {{- $summary = "R 生态下的生物信息分析资源库，适合基因组数据处理。" -}}
+{{- else if eq $titleKey "iconfinder" -}}
+    {{- $summary = "图标搜索与授权下载平台，适合查找可商用图标素材。" -}}
+{{- else if eq $titleKey "iconfont" -}}
+    {{- $summary = "阿里巴巴矢量图标库，适合收藏、下载和管理项目图标。" -}}
+{{- else if eq $titleKey "iconmonstr" -}}
+    {{- $summary = "提供简洁风格图标，适合快速下载即用的界面素材。" -}}
+{{- else if eq $titleKey "iconarchive" -}}
+    {{- $summary = "多格式图标检索平台，适合按主题快速查找图标资源。" -}}
+{{- else if eq $titleKey "findicons" -}}
+    {{- $summary = "图标搜索站，适合补充常用图标与界面元素素材。" -}}
+{{- else if eq $titleKey "icomoonapp" -}}
+    {{- $summary = "图标字体与 SVG 管理工具，适合打包自定义图标集。" -}}
+{{- else if eq $titleKey "easyicon" -}}
+    {{- $summary = "中文图标搜索站，支持 PNG、ICO、ICNS 等格式下载。" -}}
+{{- else if eq $titleKey "flaticon" -}}
+    {{- $summary = "海量矢量图标平台，适合 UI 设计、演示与产品配图。" -}}
+{{- else if eq $titleKey "uicloud" -}}
+    {{- $summary = "界面灵感与 UI 资源检索平台，适合搜集组件参考。" -}}
+{{- else if eq $titleKey "materialicons" -}}
+    {{- $summary = "Google Material 图标库，适合产品与前端界面使用。" -}}
+{{- else if eq $titleKey "fontawesomeicon" -}}
+    {{- $summary = "Font Awesome 官方图标目录，适合查找名称与用法。" -}}
+{{- else if eq $titleKey "ionicons" -}}
+    {{- $summary = "适合网页与移动界面的轻量图标库，风格简洁统一。" -}}
+{{- else if eq $titleKey "processon" -}}
+    {{- $summary = "在线流程图与思维导图工具，适合协作绘图和整理思路。" -}}
+{{- else if not $summary -}}
+    {{- if $context -}}
+        {{- $summary = printf "%s相关资源入口，适合快速访问与收藏。" $context -}}
+    {{- else -}}
+        {{- $summary = "精选站点入口，适合快速访问与收藏。" -}}
+    {{- end -}}
+{{- else if findRE "^https?://(.|\n)*?$" $summary -}}
+    {{- if $context -}}
+        {{- $summary = printf "%s官方入口，适合快速访问与收藏。" $context -}}
+    {{- else -}}
+        {{- $summary = "官方入口，适合快速访问与收藏。" -}}
+    {{- end -}}
+{{- else if eq (len (findRE "[一-龥]" $summary)) 0 -}}
+    {{- if $context -}}
+        {{- $summary = printf "%s相关资源，支持快速访问与日常收藏。" $context -}}
+    {{- else -}}
+        {{- $summary = "精选资源入口，支持快速访问与日常收藏。" -}}
+    {{- end -}}
+{{- end -}}
+<div class="url-card col-12 col-sm-6 col-lg-4 col-xl-3 reveal-card">
+    <div class="url-body default{{ if $hasQrcode }} has-qrcode{{ end }}">
+        {{- if $hasQrcode -}}
+            <a href="{{ if $link }}{{ $link }}{{ else }}javascript:;{{ end }}" {{ if $link }}target="_blank" rel="noopener noreferrer external nofollow"{{ end }}
+                class="card no-c mb-4 site-card-link" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                title="<img src='{{ $qrcodePath }}' width='136'>" aria-label="查看 {{ $site.title }} 二维码">
+        {{- else -}}
+            <a href="{{ $link }}" target="_blank" rel="noopener noreferrer external nofollow" data-url="{{ $link }}"
+                class="card no-c mb-4 site-card-link">
+        {{- end }}
+                <div class="card-body">
+                    <div class="card-badge">{{ if $hasQrcode }}扫码入口{{ else if $context }}{{ $context }}{{ else }}精选导航{{ end }}</div>
+                    <div class="url-content">
+                        <div class="url-card-top d-flex align-items-start">
+                            <div class="url-img mr-2 d-flex align-items-center justify-content-center">
+                            {{- if $logo -}}
+                                {{- if findRE "^https?://(.|\n)*?$" $logo -}}
+                                    <img class="lazy" src="{{ $logo }}" data-src="{{ $logo }}" loading="lazy" decoding="async"
+                                        onerror="javascript:this.src='{{ $page.Site.Params.defaultLogo }}'" alt="{{ $site.title }}">
+                                {{- else -}}
+                                    <img class="lazy" src="{{ $page.Site.Params.logosPath }}/{{ $logo }}" data-src="{{ $page.Site.Params.logosPath }}/{{ $logo }}" loading="lazy" decoding="async"
+                                        onerror="javascript:this.src='{{ $page.Site.Params.defaultLogo }}'" alt="{{ $site.title }}">
+                                {{- end -}}
+                            {{- else -}}
+                                <img class="lazy" src="{{ $page.Site.Params.defaultLogo }}" data-src="{{ $page.Site.Params.defaultLogo }}" loading="lazy" decoding="async"
+                                    alt="{{ $site.title }}">
+                            {{- end }}
+                            </div>
+                            <div class="url-info flex-fill">
+                                <div class="text-sm overflowClip_1">
+                                    <strong>{{ $site.title }}</strong>
+                                </div>
+                                <span class="url-host url-host-inline">{{ if $host }}{{ $host }}{{ else }}链接待补充{{ end }}</span>
+                            </div>
+                        </div>
+                        <p class="overflowClip_3 m-0 text-muted text-xs url-summary">{{ $summary }}</p>
+                        <div class="url-meta">
+                            <span class="url-prompt">{{ if $hasQrcode }}扫码查看{{ else }}点击访问{{ end }}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {{- if $link }}
+        <a href="{{ $link }}" class="togo text-center text-muted" target="_blank"
+            rel="noopener noreferrer external nofollow" aria-label="直达 {{ $site.title }}">
+            <i class="iconfont icon-goto"></i>
+        </a>
+        {{- end }}
+    </div>
+</div>

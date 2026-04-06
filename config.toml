@@ -1,0 +1,64 @@
+baseURL = "/"
+
+# 🟢 新增这一行（非常重要，让 CSS 能找到家）：
+relativeURLs = true
+
+languageCode = "zh-CN"
+title = "康康网站"
+
+# ⚠️ 关键修改：下面这行必须注释掉或删除，否则 Vercel 会报错找不到模块！
+# theme               = "WebStack-Hugo"
+
+preserveTaxonomyNames = true
+disablePathToLower    = true
+hasCJKLanguage        = true
+publishDir            = "public"
+
+[params]
+    author            = "aKang"
+    description       = "医药大数据 | AI | 阅读 - 康康网站"
+    
+    # 下面这两个链接你可以暂时留空，或者换成你的 GitHub 主页
+    upload            = "" 
+    about             = ""
+
+    # 这里指向 GitHub 仓库，方便你以后找
+    repository        = "https://github.com/kk12521/myweb"
+
+    enablePreLoad     = true
+    textPreLoad       = "正在加载康康网站..."    # 加载动画文字
+    expandSidebar     = true                         # 改为 true，默认展开侧边栏看起更丰富
+    logosPath         = "assets/images/logos"
+    defaultLogo       = "assets/images/logos/default.webp"
+    nightMode         = false
+    yiyan             = true                         # 每日一句，保留着很有趣
+    fancybox          = true
+
+[params.seo]    
+    # 原作者的统计代码我都清空了，以免数据混乱
+    baiduhmid         = '' 
+    baiduSiteVer      = ''
+    tj51laid          = ''
+    tj51lack          = ''
+    GoogleAdsClient   = ''
+
+[params.qweather]
+    # 这是天气插件的 Key，如果失效了可以去和风天气申请一个免费的，暂时不动它
+    key = "085791e805a24491b43b06cf58ab31e7"
+
+[params.images]
+    # 注意：下面这些图片目前还是原作者的，你可以以后去 assets/images 文件夹替换成你喜欢的图片
+    favicon           = "assets/images/kang-mark.svg"
+    searchImageL      = "assets/images/bg-dna.jpg"
+    searchImageD      = "assets/images/bg-dna.jpg"
+    logoExpandLight   = "assets/images/kang-wordmark.svg"
+    logoExpandDark    = "assets/images/kang-wordmark.svg"
+    logoCollapseLight = "assets/images/kang-mark.svg"
+    logoCollapseDark  = "assets/images/kang-mark.svg"
+    
+[markup.goldmark.renderer]
+    unsafe = true
+
+[params.footer]
+    # 底部版权信息改成了你的
+    copyright = '&copy; 2026 By aKang老师 <br/>'

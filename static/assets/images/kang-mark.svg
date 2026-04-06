@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="kangMarkTitle">
+  <title id="kangMarkTitle">Kang Mark</title>
+  <defs>
+    <linearGradient id="kangMarkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5447"/>
+      <stop offset="100%" stop-color="#d61926"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#kangMarkGradient)"/>
+  <path d="M38 30h16v27.5L78.2 30H98L70.4 61.6 100.5 98H80.4L59.5 72.4 54 78.4V98H38V30z" fill="#ffffff"/>
+</svg>

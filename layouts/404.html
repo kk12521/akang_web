@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+<body class="page-body boxed-container single-page error-page">
+<div class="page-container">
+{{ partial "content_header.html" . }}
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <section class="single-shell error-shell">
+                <p class="single-kicker">404</p>
+                <h1>页面走丢了</h1>
+                <p class="error-summary">你访问的内容不存在，可能已经被移动，或者链接地址有误。</p>
+                <div class="error-actions">
+                    <a href="{{ "/" | relURL }}" class="btn btn-danger">返回首页</a>
+                    <a href="{{ "/about/" | relURL }}" class="btn btn-outline-secondary">查看关于页</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+{{ partial "content_footer.html" . }}
+
+{{ partial "modal_search.html" . }}
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,20 @@
+# Hugo build artifacts
+public/
+resources/
+.hugo_build.lock
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+.vercel
