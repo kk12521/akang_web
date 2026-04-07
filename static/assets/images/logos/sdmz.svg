@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="四大名著">
+  <defs>
+    <linearGradient id="sdmz-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9c1f1f"/>
+      <stop offset="100%" stop-color="#581111"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#sdmz-bg)"/>
+  <path d="M19 17h21c4.4 0 8 3.6 8 8v22H27c-4.4 0-8-3.6-8-8V17Zm8 7v15c0 1.1.9 2 2 2h13V25c0-1.1-.9-2-2-2H27Z" fill="#f7e7c4"/>
+  <path d="M24 24h3v8h-3zm6 0h3v8h-3zm6 0h3v8h-3z" fill="#9c1f1f"/>
+</svg>

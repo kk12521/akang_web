@@ -205,7 +205,7 @@ body.io-black-mode.is-scrolled .big-header-banner .page-header {
 
 .big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a,
 .big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item) {
-    color: #f7fbfd !important;
+    color: var(--text-primary) !important;
 }
 
 .big-header-banner.header-bg .page-header .navbar-nav > li > a,
@@ -216,7 +216,7 @@ body.is-scrolled .big-header-banner .navbar-menu a:not(.dropdown-item) {
 }
 
 .big-header-banner:not(.header-bg) .header-mini-btn path {
-    stroke: #f7fbfd;
+    stroke: var(--text-primary);
 }
 
 .big-header-banner.header-bg .header-mini-btn path,

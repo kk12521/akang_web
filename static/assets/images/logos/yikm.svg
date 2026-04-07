@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="小霸王其乐无穷">
+  <defs>
+    <linearGradient id="yikm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0b3b3f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#yikm-bg)"/>
+  <rect x="14" y="21" width="36" height="22" rx="8" fill="#e8fff9"/>
+  <path d="M24 27h4v4h4v4h-4v4h-4v-4h-4v-4h4z" fill="#0f766e"/>
+  <circle cx="40.5" cy="31.5" r="2.8" fill="#ef4444"/>
+  <circle cx="46.5" cy="35.5" r="2.8" fill="#f59e0b"/>
+</svg>

@@ -12,7 +12,7 @@
       url: http://mail.qq.com/
       description: 腾讯 QQ 邮箱。
     - title: Linux.do
-      logo: https://linux.do/favicon.ico
+      logo: linuxdo.svg
       url: https://linux.do/
       description: 开源技术与效率工具社区，适合交流 Linux、开发与折腾经验。
     - title: 公众号平台
@@ -28,7 +28,7 @@
       url: https://akang.icu/
       description: 康康自创的专属新闻爬虫网站，适合快速汇总热点、追踪资讯与信息检索。
     - title: Gamer520
-      logo: https://www.gamer520.com/favicon.ico
+      logo: gamer520.svg
       url: https://www.gamer520.com/
       description: 单机游戏资源整理站，适合找热门游戏、补丁与安装指引。
     - title: Spotify
@@ -36,7 +36,7 @@
       url: https://open.spotify.com/
       description: 全球流媒体音乐平台，适合听歌、找歌单和发现新音乐。
     - title: Z-Library
-      logo: https://zh.1lib.sk/favicon.ico
+      logo: z-library.svg
       url: https://zh.1lib.sk/?ts=0652
       description: 电子书检索与阅读入口，适合找书、查资料和扩展阅读。
     - title: 布布影视
@@ -124,11 +124,11 @@
           url: https://zhenti.burningvocabulary.cn/
           description: 英语真题练习入口，适合刷题、查词和强化词汇记忆。
         - title: 四大名著
-          logo: https://www.sdmz.cn/favicon.ico
+          logo: sdmz.svg
           url: http://www.sdmz.cn/
           description: 四大名著在线阅读入口，适合查找原文、章节与经典内容。
         - title: 最好古诗
-          logo: https://www.bestgushi.com/favicon.ico
+          logo: bestgushi.svg
           url: http://www.bestgushi.com/m/
           description: 古诗词移动阅读站，适合背诵、检索和日常积累。
     - term: 云服务器
@@ -207,15 +207,15 @@
           url: https://tieba.baidu.com/index.html
           description: 百度贴吧。
         - title: Gamer520
-          logo: https://www.gamer520.com/favicon.ico
+          logo: gamer520.svg
           url: https://www.gamer520.com/
           description: 单机游戏资源整理站，适合找热门游戏、补丁与安装指引。
         - title: 太原switch专修
-          logo: https://xn--switch-8q7iu0k1wkono.cn/favicon.ico
+          logo: taiyuan-switch.svg
           url: https://www.xn--switch-8q7iu0k1wkono.cn/
           description: Switch 游戏与设备资讯站，适合查找主机相关资源与经验。
         - title: 小霸王其乐无穷
-          logo: https://www.yikm.net/favicon.ico
+          logo: yikm.svg
           url: https://www.yikm.net/
           description: 在线怀旧游戏平台，适合直接游玩街机与经典红白机游戏。
    
