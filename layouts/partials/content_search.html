@@ -18,15 +18,6 @@
                 <p class="hero-kicker">Bioinformatics / AI / Reading</p>
                 <h1 class="hero-title">{{ .Site.Title }}</h1>
                 <p class="hero-summary">{{ .Site.Params.description }}</p>
-                <div class="hero-stats">
-                    <span><strong>{{ $stats.Get "links" }}</strong> 精选站点</span>
-                    <span><strong>{{ $stats.Get "terms" }}</strong> 主题分区</span>
-                    <span><strong>{{ len .Site.Data.friendlinks }}</strong> 友情链接</span>
-                </div>
-                <div class="hero-tips">
-                    <span>按 <kbd>/</kbd> 或 <kbd>Ctrl</kbd> + <kbd>K</kbd> 快速聚焦搜索</span>
-                    <span>支持搜索、文献、工具、社区与生活入口一键切换</span>
-                </div>
             </div>
         </div>
         <div id="search" class="s-search mx-auto search-panel">
@@ -256,7 +247,7 @@
                                 id="type-zhaopin" 
                                 value="https://sou.zhaopin.com/jobs/searchresult.ashx?kw=" 
                                 data-placeholder="智联招聘">
-                            <label for="zhaopin"><span class="text-muted">智联招聘</span></label>
+                            <label for="type-zhaopin"><span class="text-muted">智联招聘</span></label>
                         </li>
                         <li><input hidden="" type="radio" name="type" 
                                 id="type-51job" 
@@ -282,6 +273,11 @@
             <div class="card search-smart-tips search-hot-text">
                 <ul id="word" style="display: none"></ul>
             </div>
+        </div>
+        <div class="hero-stats hero-stats-below">
+            <span><strong>{{ $stats.Get "links" }}</strong> 精选站点</span>
+            <span><strong>{{ $stats.Get "terms" }}</strong> 主题分区</span>
+            <span><strong>{{ len .Site.Data.friendlinks }}</strong> 友情链接</span>
         </div>
     </div>
     <!--div class="bulletin-big mx-3 mx-md-0">

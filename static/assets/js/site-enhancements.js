@@ -102,7 +102,7 @@
                 threshold: 0.14
             });
 
-            document.querySelectorAll('.hero-intro, .section-shell, .reveal-card, .friendlink a').forEach(function (node, index) {
+            document.querySelectorAll('.hero-intro, .hero-stats-below, .section-shell, .reveal-card, .friendlink a').forEach(function (node, index) {
                 if (node.classList.contains('reveal-card')) {
                     node.style.transitionDelay = ((index % 6) * 50) + 'ms';
                 }
@@ -135,7 +135,7 @@
                 setActiveLinks(sectionNodes[0].id);
             }
         } else {
-            $('.hero-intro, .section-shell, .reveal-card, .friendlink a').addClass('is-visible');
+            $('.hero-intro, .hero-stats-below, .section-shell, .reveal-card, .friendlink a').addClass('is-visible');
         }
     });
 })(jQuery);
