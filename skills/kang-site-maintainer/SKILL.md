@@ -131,8 +131,27 @@ Use Vercel direct deploy:
 npx.cmd vercel deploy --prod --yes --scope kangs-projects-d92c767d
 ```
 
-After deploy, confirm the alias:
-`https://likang.eu.cc`
+After deploy, do NOT stop at "deployment ready".
+
+You MUST verify that the custom domain points to the latest deployment, not just that:
+- the project contains the domain
+- the domain returns `200`
+- the new production deployment is `READY`
+
+Required verification flow:
+
+```powershell
+npx.cmd vercel inspect likang.eu.cc --scope kangs-projects-d92c767d
+npx.cmd vercel inspect web-stack-hugo-kangs-projects-d92c767d.vercel.app --scope kangs-projects-d92c767d
+```
+
+Compare the deployment IDs. If they differ, repoint the domain explicitly:
+
+```powershell
+npx.cmd vercel alias set <latest-production-deployment>.vercel.app likang.eu.cc --scope kangs-projects-d92c767d
+```
+
+Then re-run `vercel inspect likang.eu.cc` and confirm it resolves to the latest deployment.
 
 ### GitHub
 
@@ -167,6 +186,7 @@ After edits:
 3. If search providers changed, verify both desktop and modal search blocks were updated.
 4. If logos or QR codes changed, verify the referenced file exists.
 5. If publishing, redeploy via Vercel and verify the live alias.
+6. If publishing to `likang.eu.cc`, verify the custom domain resolves to the SAME deployment ID as the latest production alias.
 
 ## Notes Specific To This Project
 
