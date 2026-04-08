@@ -95,6 +95,29 @@
                 <div class="sidebar-menu flex-fill">
                     <div class="sidebar-scroll">
                         <div class="sidebar-menu-inner">
+                            <div class="top-menu border-bottom border-color">
+                                <ul>
+                                    {{ range .Site.Data.headers }}
+                                    {{ $itemLink := .link }}
+                                    {{ if not $itemLink }}
+                                    {{ $itemLink = "javascript:;" }}
+                                    {{ end }}
+                                    <li class="sidebar-item{{ if .list }} menu-item-has-children{{ end }}">
+                                        <a href="{{ $itemLink }}" {{ if hasPrefix $itemLink "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                                            <i class="{{ .icon }} fa-lg mr-2"></i>
+                                            <span>{{ .item }}</span>
+                                        </a>
+                                        {{ if .list }}
+                                        <ul class="sub-menu">
+                                            {{ range .list }}
+                                            <li><a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .name }}</a></li>
+                                            {{ end }}
+                                        </ul>
+                                        {{ end }}
+                                    </li>
+                                    {{ end }}
+                                </ul>
+                            </div>
                             <ul>
                                 {{ range .Site.Data.webstack }}
                                     {{ if .list }}
